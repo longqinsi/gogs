@@ -821,7 +821,7 @@ func MigrateRepository(doer, owner *User, opts MigrateRepoOptions) (*Repository,
 			RepoID:      repo.ID,
 			Interval:    setting.Mirror.DefaultInterval,
 			EnablePrune: true,
-			NextSync:    time.Now().Add(time.Duration(setting.Mirror.DefaultInterval) * time.Hour),
+			NextSync:    time.Now().Add(time.Duration(setting.Mirror.DefaultInterval) * time.Minute),
 		}); err != nil {
 			return repo, fmt.Errorf("InsertOne: %v", err)
 		}
