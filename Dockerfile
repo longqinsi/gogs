@@ -1,4 +1,5 @@
 FROM golang:alpine AS binarybuilder
+COPY go-bindata /usr/local/bin/go-bindata
 # Install build deps
 RUN apk --no-cache --no-progress add --virtual build-deps build-base git linux-pam-dev
 WORKDIR /go/src/github.com/gogs/gogs
